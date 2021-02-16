@@ -1,6 +1,6 @@
 {
   "name": "@create-discord-bot/create-discord-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create discord.js bot project",
   "main": "index.js",
   "scripts": {
