@@ -1,17 +1,26 @@
 {
-  "name": "create-discord-bot",
+  "name": "@create-discord-bot/create-discord-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "create discord.js bot project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "sujang958",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.1.0",
     "progress": "^2.0.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujang958/create-discord-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sujang958/create-discord-bot/issues"
+  },
+  "homepage": "https://github.com/sujang958/create-discord-bot#readme"
 }
