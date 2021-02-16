@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/sujang958/create-discord-bot/issues"
   },
-  "homepage": "https://github.com/sujang958/create-discord-bot#readme"
+  "homepage": "https://github.com/sujang958/create-discord-bot#readme",
+  "install": "npm i -g @create-discord-bot/create-discord-bot"
 }
