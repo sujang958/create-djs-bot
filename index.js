@@ -12,6 +12,7 @@ program
 
 program
 .command('create <name>')
+.usage('create <name> --lang <lang(default: js)>')
 .option('--lang <lang>')
 .description('Create Discord.js Project \nDefault Language: JS, use "--lang ts" to use typescript') 
 .alias('crt')
