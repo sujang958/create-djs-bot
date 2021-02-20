@@ -5,7 +5,7 @@
 
 ## install
 ```
-$ npm install --global @create-discord-bot/create-discord-bot
+$ ㅁㄹ
 ```
 
 ## Usage
