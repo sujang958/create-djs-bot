@@ -1,6 +1,6 @@
 {
-  "name": "create-djs-bot",
-  "version": "1.1.0",
+  "name": "@sujang/create-djs-bot",
+  "version": "1.2.2",
   "description": "create discord.js bot project",
   "main": "./bin/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "discord.js",
     "discord"
   ],
-  "author": "sujang958",
+  "author": "sujang",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
