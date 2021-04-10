@@ -1,17 +1,23 @@
 {
-  "name": "@create-discord-bot/create-discord-bot",
+  "name": "create-djs-bot",
   "version": "1.1.0",
   "description": "create discord.js bot project",
-  "main": "./bin/create-discord-bot.js",
+  "main": "./bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["CLI", "cli", "discord.js", "discord"],
+  "keywords": [
+    "CLI",
+    "cli",
+    "discord.js",
+    "discord"
+  ],
   "author": "sujang958",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^7.1.0"
+    "commander": "^7.1.0",
+    "inquirer": "^8.0.0"
   },
   "repository": {
     "type": "git",
@@ -22,7 +28,6 @@
   },
   "homepage": "https://github.com/sujang958/create-discord-bot#readme",
   "bin": {
-    "@create-discord-bot/create-discord-bot": "./bin/create-discord-bot",
-    "create-discord-bot": "./bin/create-discord-bot"
+    "create-djs-bot": "./bin/index.js"
   }
 }

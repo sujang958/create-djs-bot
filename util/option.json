@@ -1,0 +1,10 @@
+{
+    "language": {
+        "Javascript": "JS",
+        "Typescript": "TS"
+    },
+    "semicolon": {
+        "Yes": true,
+        "No": false
+    }
+}
