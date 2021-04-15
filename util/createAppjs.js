@@ -1,28 +1,10 @@
-const chalk = require('chalk');
+const { cyanBright } = require('chalk');
 const fs = require('fs');
 const path = require('path');
+const createPackageJSON = require('./createPackagejson');
 
-
-/**
- * 
- * @param {String} name 
- * @param {String} dirname 
- * @param {String} lang 
- * @param {String} semicolon 
- */
-const createDiscordBotPrj = (name, dirname, lang, semicolon=false) => {
-    fs.mkdirSync(name);
-    dirname = process.cwd();
-    console.log(chalk.cyanBright('Create File...'));
-    createApp(name, path.join(dirname, `/${name}/`), lang, semicolon);
-    console.log(chalk.greenBright('Done!'));
-    console.log(chalk.cyanBright('Install modules...'));
-    require('child_process').exec(`cd ${path.join(dirname, `/${name}/`)} && npm i`).on('close', () => {
-        console.log(chalk.greenBright('Done!'));
-    });
-}
-
-const createApp = (name, pathname, lang, semicolon)=> {
+module.exports = (name, pathname, lang, semicolon)=> {
+    console.log(cyanBright('Create File...'));
     if (lang == "TS") {
         let code = `import Discord from 'discord.js';
 
@@ -118,43 +100,6 @@ client.login(token);
 `;
         if (semicolon) code = code.replace(/[;]/g, '');
         fs.writeFileSync(path.join(pathname, `/app.js`), code);
-    }
-    
-}
-
-const createPackageJSON = (name, pathname, lang="JS") => {
-    let package = {
-        name: name,
-        version: "1.0.0",
-        description: "",
-        main: "app.js",
-        scripts: {
-            start: "ts-node app.ts"
-        },
-        keywords: [],
-        author: "",
-        license: "MIT",
-        dependencies: {
-            "discord.js": "latest"
-        },
-    }
-
-    if (lang == "JS") {
-        package.scripts.start = "node app";
-        fs.writeFileSync(path.join(pathname, "/package.json"), JSON.stringify(package));
-        createConfig(pathname);
-    } else {
-        package.dependencies["@types/node"] = "latest";
-        fs.writeFileSync(path.join(pathname, "/package.json"), JSON.stringify(package));
+        createPackageJSON(name, pathname, lang)
     }
 }
-
-const createConfig = (pathname) => {
-    fs.writeFileSync(path.join(pathname, "/config.json"), JSON.stringify({
-        prefix: "",
-        token: "",
-        defaultStatus: ""
-    }));
-}
-
-module.exports = createDiscordBotPrj;
