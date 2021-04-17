@@ -1,6 +1,6 @@
 {
   "name": "@sujang/create-djs-bot",
-  "version": "2.0.2",
+  "version": "2.1.2",
   "description": "create discord.js bot project",
   "main": "./bin/index.js",
   "scripts": {
