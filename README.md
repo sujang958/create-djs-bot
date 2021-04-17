@@ -15,8 +15,8 @@ $ npm install -g @sujang/create-djs-bot
 $ yarn global add @sujang/create-djs-bot
 ```
 
-## Author :)
-👤 ***Sujang958***
+## Author
+***Sujang958***
 
 ## Usage
 ```sh
