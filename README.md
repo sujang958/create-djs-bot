@@ -18,10 +18,10 @@ $ yarn global add @sujang/create-djs-bot
 ## Author :)
 👤 ***Sujang958***
 
-## Usage ー( ´ ▽ ` )ﾉ
+## Usage
 ```sh
 $ create-djs-bot <name>
 ```
 
-# Report '◡'
+## Report
 Report some issue on Github(https://github.com/sujang958/create-djs-bot/issues)
