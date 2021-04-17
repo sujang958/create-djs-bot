@@ -6,7 +6,10 @@ const createPackageJSON = require('./createPackagejson');
 module.exports = (name, pathname, lang, semicolon)=> {
     console.log(cyanBright('Create File...'));
     if (lang == "TS") {
-        let code = `import Discord from 'discord.js';
+        let code = `import * as Discord from 'discord.js';
+import { config } from 'dotenv';
+
+config();
 
 class Bot {
     public client: Discord.Client;
@@ -41,15 +44,15 @@ bot.message(message => {
 });
 
 bot.login();`;
-        if (semicolon) code = code.replace(/[;]/g, '');
+        if (!semicolon) code = code.replace(/[;]/g, '');
         fs.writeFileSync(path.join(pathname, `/app.ts`), code);
-        createPackageJSON(name, pathname, lang)
     } else {
         let code = `const { Client, Collection } = require('discord.js');
-const { prefix, token, defaultStatus } = require('./config.json');
+const dotenv = require('dotenv');
 const fs = require('fs');
 
 
+dotenv.config();
 const client = new Client();
 
 
@@ -98,8 +101,9 @@ client.on('message', async message => {
 
 client.login(token);
 `;
-        if (semicolon) code = code.replace(/[;]/g, '');
+        if (!semicolon) code = code.replace(/[;]/g, '');
         fs.writeFileSync(path.join(pathname, `/app.js`), code);
-        createPackageJSON(name, pathname, lang)
     }
+
+    createPackageJSON(name, pathname, lang)
 }

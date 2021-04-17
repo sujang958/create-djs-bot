@@ -6,7 +6,7 @@ const create = require('../util/createBotPrj');
 
 
 program
-.version('v1.1', '-v, --version')
+.version('v2.1', '-v, --version')
 .usage('<name>')
 .arguments('<name>')
 .action(async (name) => {

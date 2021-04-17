@@ -7,7 +7,7 @@ module.exports = (name, pathname, lang="JS") => {
         name: name,
         version: "1.0.0",
         description: "",
-        main: "app.js",
+        main: "app.ts",
         scripts: {
             start: "ts-node app.ts"
         },
@@ -15,16 +15,18 @@ module.exports = (name, pathname, lang="JS") => {
         author: "",
         license: "MIT",
         dependencies: {
-            "discord.js": "latest"
+            "discord.js": "latest",
+            "dotenv": "latest",
         },
     }
 
     if (lang == "JS") {
+        package.main = "app.js";
         package.scripts.start = "node app";
-        createEnv(pathname);
     } else {
         package.dependencies["@types/node"] = "latest";
     }
 
     fs.writeFileSync(path.join(pathname, "/package.json"), JSON.stringify(package));
+    createEnv(pathname);
 }
