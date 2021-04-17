@@ -25,7 +25,7 @@ program
     const { token } = await inquirer.prompt({
         type: "password",
         message: "Type your bot token",
-        name: "token"
+        name: "token",
     });
     const { prefix } = await inquirer.prompt({
         type: "input",

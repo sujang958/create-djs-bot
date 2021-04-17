@@ -6,9 +6,9 @@ module.exports = (name, pathname, lang="JS") => {
         name: name,
         version: "1.0.0",
         description: "",
-        main: "app.ts",
+        main: `app.${lang.toLowerCase()}`,
         scripts: {
-            start: "ts-node app.ts"
+            start: `ts-node app.${lang.toLowerCase()}`
         },
         keywords: [],
         author: "",
@@ -19,12 +19,11 @@ module.exports = (name, pathname, lang="JS") => {
         },
     }
 
-    if (lang == "JS") {
-        package.main = "app.js";
-        package.scripts.start = "node app";
-    } else {
+    if (lang == "JS") 
+        package.scripts.start = "node app.js";
+    else 
         package.dependencies["@types/node"] = "latest";
-    }
+    
 
     fs.writeFileSync(path.join(pathname, "/package.json"), JSON.stringify(package));
 }

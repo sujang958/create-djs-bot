@@ -18,7 +18,8 @@ const createDiscordBotPrj = (name, dirname=process.cwd(), lang, semicolon=false,
     console.log(chalk.cyanBright('Create File...'));
 
     fs.mkdirSync(path.join(dirname, name));
-    createApp(name, path.join(dirname, `/${name}/`), lang, semicolon);
+    fs.mkdirSync(path.join(dirname, name, '/commands/'));
+    createApp(path.join(dirname, `/${name}/`), lang, semicolon);
     createPackageJSON(name, path.join(dirname, `/${name}/`), lang);
     createEnv(path.join(dirname, `/${name}/`), token, prefix);
 
@@ -27,9 +28,8 @@ const createDiscordBotPrj = (name, dirname=process.cwd(), lang, semicolon=false,
     
     require('child_process').exec(`cd ${path.join(dirname, `/${name}/`)} && npm i`).on('close', () => {
         console.log(chalk.greenBright('Done!'));
+        console.log(chalk.blueBright('Happy Hacking!'));
     });
-
-    console.log(chalk.bgCyanBright("happy hacking!"));
 }
 
 module.exports = createDiscordBotPrj;
